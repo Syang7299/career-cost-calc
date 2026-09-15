@@ -351,7 +351,8 @@
       const paybackYears = totalCost / annualGain;
       const paybackMonths = paybackYears * 12;
       if (paybackMonths < 24){
-        paybackEl.textContent = Math.ceil(paybackMonths) + ' months';
+        const m = Math.ceil(paybackMonths);
+        paybackEl.textContent = m + (m === 1 ? ' month' : ' months');
       } else {
         paybackEl.textContent = paybackYears.toFixed(1) + ' years';
       }
