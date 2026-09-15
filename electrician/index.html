@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Electrician License &amp; Apprenticeship Cost Calculator | CareerCost</title>
+<meta name="description" content="Free electrician apprenticeship cost calculator - see your real cost (fees, tools, and the wage gap during training) and how fast your journeyman wage pays it back.">
+<link rel="canonical" href="https://YOURDOMAIN.com/electrician/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Electrician License &amp; Apprenticeship Cost Calculator">
+<meta property="og:description" content="See your real cost to become a licensed electrician and how fast your journeyman wage pays it back.">
+<meta property="og:url" content="https://YOURDOMAIN.com/electrician/">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Electrician License & Apprenticeship Cost Calculator",
+  "url": "https://YOURDOMAIN.com/electrician/",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any (web-based)",
+  "description": "Free calculator that turns electrician apprenticeship fees, tools, and the training-period wage gap into a total cost and a personalized payback timeline.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does it cost to become a licensed electrician?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Most electricians train through a paid apprenticeship rather than paying upfront tuition. Program enrollment fees typically run $250 to $1,420 per year over a 4-year apprenticeship, plus $500 to $10,000 for tools and books, plus a licensing exam fee of roughly $30 to $75. The bigger factor is usually the wage gap - apprentices earn 40-50% of journeyman wage in year one, rising to 100% at completion." }
+    },
+    {
+      "@type": "Question",
+      "name": "How much do electrician apprentices get paid compared to journeymen?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Apprentices typically start at 40-50% of the local journeyman wage and get raises roughly every 1,000 on-the-job hours (about every 6 months), reaching 80-90% by years 4-5 and 100% (full journeyman pay) at completion. A 4-year apprenticeship averages out to roughly 70-75% of journeyman wage over the whole program." }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does an electrician apprenticeship take?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Most apprenticeship programs take 4 years, combining around 2,000 hours per year of on-the-job training with about 144 hours per year of classroom instruction." }
+    }
+  ]
+}
+</script>
+<!-- Google tag (gtag.js) placeholder — add once GA4 property exists -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #FAF6F1;
+    --surface: #FFFFFF;
+    --surface-soft: #F3EBE3;
+    --border: #E5D9CC;
+    --ink: #2B211A;
+    --ink-soft: #6B5D4F;
+    --ink-faint: #A69684;
+    --terracotta: #C1543C;
+    --terracotta-soft: rgba(193,84,60,0.10);
+    --sage: #7A8B6F;
+    --sage-soft: rgba(122,139,111,0.14);
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-body: 'Work Sans', system-ui, sans-serif;
+  }
+  *{ box-sizing: border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap{ max-width: 980px; margin: 0 auto; padding: 0 20px; }
+
+  header.site{ background: var(--ink); }
+  .site-nav{
+    max-width: 980px; margin: 0 auto; padding: 18px 20px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .brand{
+    font-family: var(--font-display); font-weight: 600; font-size: 20px; font-style: italic;
+    color: #fff; text-decoration: none;
+  }
+  .brand .accent{ color: #E8A491; font-style: normal; }
+  .site-nav a.link{
+    font-family: var(--font-body); font-size: 14px; font-weight: 600;
+    color: rgba(255,255,255,0.7); text-decoration: none; margin-left: 26px;
+  }
+  .site-nav a.link:hover{ color: #fff; }
+
+  main{ padding: 48px 0 80px; }
+
+  .eyebrow{
+    font-family: var(--font-body); font-size: 13px; font-weight: 700; letter-spacing: 0.05em;
+    color: var(--terracotta); text-transform: uppercase; margin: 0 0 12px;
+  }
+  h1{
+    font-family: var(--font-display); font-weight: 600; font-size: clamp(30px, 4.6vw, 44px);
+    line-height: 1.15; margin: 0 0 16px; letter-spacing: -0.01em; color: var(--ink);
+  }
+  .lede{ font-size: 16.5px; color: var(--ink-soft); line-height: 1.65; margin: 0 0 36px; max-width: 640px; }
+
+  .calc-layout{ display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 22px; align-items: start; }
+  @media (max-width: 800px){ .calc-layout{ grid-template-columns: 1fr; } }
+
+  .panel{
+    background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
+    padding: 28px;
+  }
+  .panel h2.panel-title{
+    font-family: var(--font-display); font-weight: 600; font-size: 19px; color: var(--ink);
+    margin: 0 0 20px;
+  }
+  .field-row{ display: grid; grid-template-columns: 1fr 130px; gap: 12px; align-items: center; margin-bottom: 15px; }
+  .field-row label{ font-family: var(--font-body); font-weight: 600; font-size: 14px; }
+  .field-row .hint{ display: block; font-weight: 400; font-size: 12px; color: var(--ink-faint); margin-top: 2px; }
+  .field-row input{
+    font-family: var(--font-body); font-size: 15px; color: var(--ink); text-align: right;
+    background: var(--surface-soft); border: 1px solid var(--border); border-radius: 9px;
+    padding: 10px 11px; width: 100%;
+  }
+  .field-row input:focus{ outline: none; border-color: var(--terracotta); }
+  .field-divider{ border: none; border-top: 1px solid var(--border); margin: 20px 0; }
+
+  .btn-primary{
+    font-family: var(--font-body); font-weight: 700; font-size: 15px;
+    color: #fff; background: var(--terracotta); border: none; border-radius: 10px;
+    padding: 14px 22px; cursor: pointer; width: 100%; margin-top: 8px;
+  }
+  .btn-primary:hover{ background: #A8452F; }
+
+  .calc-note{
+    font-size: 12.5px; color: #8A5A2B; background: rgba(193,84,60,0.08); border-radius: 8px;
+    padding: 9px 12px; margin: 12px 0 0; display: none;
+  }
+
+  .results-panel{
+    background: var(--ink); border-radius: 16px; padding: 28px; color: #fff;
+    position: sticky; top: 20px;
+  }
+  .results-panel .quote-label{
+    font-family: var(--font-body); font-size: 13px; font-weight: 600; letter-spacing: 0.03em;
+    color: rgba(255,255,255,0.6); text-transform: uppercase; margin: 0 0 8px;
+  }
+  .results-panel .quote-amount{
+    font-family: var(--font-display); font-weight: 600; font-size: 38px; margin: 0 0 4px; color: #E8A491;
+  }
+  .results-panel .quote-sub{ font-size: 13.5px; color: rgba(255,255,255,0.55); margin: 0 0 22px; }
+  .breakdown-row{
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.12); font-size: 14px;
+  }
+  .breakdown-row .b-label{ color: rgba(255,255,255,0.7); }
+  .breakdown-row .b-value{ font-family: var(--font-body); font-weight: 700; }
+  .breakdown-row.total{ border-bottom: none; margin-top: 4px; padding-top: 16px; font-size: 15px; }
+  .breakdown-row.total .b-value{ color: var(--sage); font-size: 17px; }
+
+  section.info{ margin-top: 68px; }
+  h2{
+    font-family: var(--font-display); font-weight: 600; font-size: 25px; color: var(--ink);
+    margin: 0 0 18px; letter-spacing: -0.005em;
+  }
+  section.info p{ font-size: 15.5px; line-height: 1.75; color: var(--ink-soft); margin: 0 0 16px; }
+
+  .term-grid{ display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin: 18px 0 8px; }
+  @media (max-width: 640px){ .term-grid{ grid-template-columns: 1fr; } }
+  .term-card{
+    background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px;
+  }
+  .term-card h3{
+    font-family: var(--font-display); font-size: 16px; font-weight: 600; margin: 0 0 6px; color: var(--terracotta);
+  }
+  .term-card p{ font-size: 13.5px; color: var(--ink-soft); margin: 0; line-height: 1.6; }
+
+  table.state-table{ width: 100%; border-collapse: collapse; margin: 8px 0 24px; font-size: 14.5px; }
+  table.state-table th{
+    text-align: left; font-family: var(--font-display); font-weight: 600; color: #fff;
+    background: var(--ink); padding: 11px 14px; font-size: 13px;
+  }
+  table.state-table td{ padding: 11px 14px; border-bottom: 1px solid var(--border); color: var(--ink-soft); }
+  table.state-table tr:nth-child(even) td{ background: var(--surface-soft); }
+  table.state-table td:first-child{ font-weight: 600; color: var(--ink); }
+
+  .faq-item{ border-bottom: 1px solid var(--border); padding: 20px 0; }
+  .faq-item h3{ font-family: var(--font-display); font-size: 17px; font-weight: 600; margin: 0 0 8px; color: var(--ink); }
+  .faq-item p{ font-size: 14.5px; color: var(--ink-soft); margin: 0; line-height: 1.7; }
+
+  footer{
+    border-top: 1px solid var(--border); margin-top: 70px; padding: 30px 0;
+    font-size: 12.5px; color: var(--ink-faint); text-align: center; line-height: 1.8;
+  }
+  footer a{ color: var(--terracotta); }
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="site-nav">
+    <a class="brand" href="/">Career<span class="accent">Cost</span></a>
+    <nav>
+      <a class="link" href="/">All Calculators</a>
+      <a class="link" href="#how-it-works">How it works</a>
+      <a class="link" href="#terms">Terms</a>
+      <a class="link" href="#faq">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <p class="eyebrow"><a href="/" style="color:inherit;text-decoration:none;">CareerCost</a> · Electrician</p>
+  <h1>Electrician License &amp; Apprenticeship Cost Calculator</h1>
+  <p class="lede">Most electricians don't pay big upfront tuition - they earn a percentage of journeyman wage while they train. Enter your numbers to see the real cost (fees, tools, and the wage gap) and how fast full journeyman pay earns it back.</p>
+
+  <div class="calc-layout">
+    <div class="panel">
+      <h2 class="panel-title">Your Apprenticeship</h2>
+
+      <div class="field-row">
+        <label for="f-journeyman">Journeyman wage in your area<span class="hint">$/hour - varies $28-60+ by region</span></label>
+        <input type="number" id="f-journeyman" min="0" step="any" placeholder="0" value="35">
+      </div>
+      <div class="field-row">
+        <label for="f-years">Apprenticeship length<span class="hint">Most programs run 4 years</span></label>
+        <input type="number" id="f-years" min="1" step="1" placeholder="0" value="4">
+      </div>
+      <div class="field-row">
+        <label for="f-startpct">Starting apprentice wage<span class="hint">% of journeyman - typically 40-50%</span></label>
+        <input type="number" id="f-startpct" min="0" max="100" step="any" placeholder="0" value="45">
+      </div>
+      <div class="field-row">
+        <label for="f-fees">Program fees<span class="hint">Per year - typically $250-$1,420</span></label>
+        <input type="number" id="f-fees" min="0" step="any" placeholder="0" value="700">
+      </div>
+      <div class="field-row">
+        <label for="f-tools">Tools &amp; books<span class="hint">Total over the program</span></label>
+        <input type="number" id="f-tools" min="0" step="any" placeholder="0" value="1500">
+      </div>
+      <div class="field-row">
+        <label for="f-examfee">Licensing exam fee<span class="hint">Typically $30-$75</span></label>
+        <input type="number" id="f-examfee" min="0" step="any" placeholder="0" value="50">
+      </div>
+
+      <hr class="field-divider">
+
+      <div class="field-row">
+        <label for="f-currentwage">Your current hourly wage<span class="hint">What you'd earn if you didn't apprentice</span></label>
+        <input type="number" id="f-currentwage" min="0" step="any" placeholder="0" value="18">
+      </div>
+
+      <p class="calc-note" id="calc-note"></p>
+      <button class="btn-primary" id="calc-btn" type="button">Recalculate</button>
+    </div>
+
+    <div class="results-panel">
+      <p class="quote-label">Total Cost to Get Licensed</p>
+      <p class="quote-amount" id="total-cost">$0</p>
+      <p class="quote-sub" id="avg-wage-sub">Average apprentice pay: —/hr</p>
+
+      <div class="breakdown-row"><span class="b-label">Program fees (all years)</span><span class="b-value" id="b-fees">$0</span></div>
+      <div class="breakdown-row"><span class="b-label">Tools, books &amp; exam fee</span><span class="b-value" id="b-tools">$0</span></div>
+      <div class="breakdown-row"><span class="b-label">Wage gap during training</span><span class="b-value" id="b-gap">$0</span></div>
+      <div class="breakdown-row"><span class="b-label">Journeyman wage gain</span><span class="b-value" id="b-gain">$0/yr</span></div>
+      <div class="breakdown-row total"><span class="b-label">Payback Period</span><span class="b-value" id="b-payback">—</span></div>
+    </div>
+  </div>
+
+  <section class="info" id="how-it-works">
+    <h2>How this calculator works</h2>
+    <p>An apprenticeship's real cost is mostly the <b>wage gap</b>, not tuition - you earn a rising percentage of journeyman wage during training (this calculator assumes a straight-line ramp from your starting % to 100%, which is a simplification of the real step-raise schedule but close enough for planning). If that average apprentice wage is still below what you'd earn elsewhere, that shortfall - plus program fees, tools, and the exam fee - is your total cost.</p>
+    <p>Once you're a full journeyman, the payback formula is the same one used everywhere on this site: <b>Payback Period = Total Cost ÷ Annual Wage Gain</b> (journeyman pay vs. your current wage, both annualized at 2,000 hours/year).</p>
+  </section>
+
+  <section class="info" id="terms">
+    <h2>What's in the numbers</h2>
+    <div class="term-grid">
+      <div class="term-card">
+        <h3>Wage ramp</h3>
+        <p>Apprentices start at 40-50% of journeyman wage and get raises roughly every 1,000 hours, reaching 100% at completion - typically around 4 years.</p>
+      </div>
+      <div class="term-card">
+        <h3>Program fees</h3>
+        <p>Annual enrollment for a registered apprenticeship program, typically $250-$1,420/year - far less than trade-school tuition since you're earning while you learn.</p>
+      </div>
+      <div class="term-card">
+        <h3>Tools &amp; books</h3>
+        <p>Hand tools, a code book, and course materials - a real cost, but usually a fraction of what tuition-based trade school runs.</p>
+      </div>
+      <div class="term-card">
+        <h3>Journeyman wage gain</h3>
+        <p>The permanent raise you get once licensed - this is what actually pays back your training cost, year after year.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="info" id="faq">
+    <h2>FAQ</h2>
+    <div class="faq-item">
+      <h3>How much does it cost to become a licensed electrician?</h3>
+      <p>Most electricians train through a paid apprenticeship rather than paying upfront tuition. Program enrollment fees typically run $250 to $1,420 per year over a 4-year apprenticeship, plus $500 to $10,000 for tools and books, plus a licensing exam fee of roughly $30 to $75. The bigger factor is usually the wage gap - apprentices earn 40-50% of journeyman wage in year one, rising to 100% at completion.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How much do electrician apprentices get paid compared to journeymen?</h3>
+      <p>Apprentices typically start at 40-50% of the local journeyman wage and get raises roughly every 1,000 on-the-job hours (about every 6 months), reaching 80-90% by years 4-5 and 100% (full journeyman pay) at completion. A 4-year apprenticeship averages out to roughly 70-75% of journeyman wage over the whole program.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How long does an electrician apprenticeship take?</h3>
+      <p>Most apprenticeship programs take 4 years, combining around 2,000 hours per year of on-the-job training with about 144 hours per year of classroom instruction.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  CareerCost is an independent tool and is not affiliated with any union, apprenticeship program, licensing board, or accrediting body. Figures are general ranges - confirm exact costs and wage schedules with your local program before enrolling.
+</footer>
+
+<script>
+(function(){
+  const $ = (id) => document.getElementById(id);
+  const fmt = (n) => '$' + Math.round(n).toLocaleString('en-US');
+  const HOURS_PER_YEAR = 2000;
+
+  function num(id){
+    const v = parseFloat($(id).value);
+    return isNaN(v) || v < 0 ? 0 : v;
+  }
+
+  function calculate(){
+    const journeyman = num('f-journeyman');
+    const years = Math.max(1, num('f-years'));
+    let startPct = num('f-startpct');
+    const feesPerYear = num('f-fees');
+    const tools = num('f-tools');
+    const examFee = num('f-examfee');
+    const currentWage = num('f-currentwage');
+
+    const noteEl = $('calc-note');
+    if (startPct > 100){
+      startPct = 100;
+      noteEl.textContent = 'Starting wage % capped at 100%.';
+      noteEl.style.display = 'block';
+    } else {
+      noteEl.style.display = 'none';
+    }
+
+    const avgPct = (startPct + 100) / 2 / 100;
+    const avgApprenticeWage = journeyman * avgPct;
+
+    const apprenticeAnnualEarnings = avgApprenticeWage * HOURS_PER_YEAR;
+    const currentAnnualEarnings = currentWage * HOURS_PER_YEAR;
+    const annualShortfall = Math.max(0, currentAnnualEarnings - apprenticeAnnualEarnings);
+    const totalWageGap = annualShortfall * years;
+
+    const totalFees = feesPerYear * years;
+    const totalToolsExam = tools + examFee;
+    const totalCost = totalWageGap + totalFees + totalToolsExam;
+
+    const journeymanAnnual = journeyman * HOURS_PER_YEAR;
+    const annualGain = journeymanAnnual - currentAnnualEarnings;
+
+    $('total-cost').textContent = fmt(totalCost);
+    $('avg-wage-sub').textContent = 'Average apprentice pay: $' + avgApprenticeWage.toFixed(2) + '/hr (' + (avgPct*100).toFixed(0) + '% of journeyman)';
+    $('b-fees').textContent = fmt(totalFees);
+    $('b-tools').textContent = fmt(totalToolsExam);
+    $('b-gap').textContent = fmt(totalWageGap);
+    $('b-gain').textContent = fmt(annualGain) + '/yr';
+
+    const paybackEl = $('b-payback');
+    if (annualGain <= 0){
+      paybackEl.textContent = 'N/A';
+    } else if (totalCost <= 0){
+      paybackEl.textContent = 'Immediate';
+    } else {
+      const paybackYears = totalCost / annualGain;
+      const paybackMonths = paybackYears * 12;
+      if (paybackMonths < 24){
+        paybackEl.textContent = Math.ceil(paybackMonths) + ' months';
+      } else {
+        paybackEl.textContent = paybackYears.toFixed(1) + ' years';
+      }
+    }
+  }
+
+  const inputIds = ['f-journeyman','f-years','f-startpct','f-fees','f-tools','f-examfee','f-currentwage'];
+  inputIds.forEach(function(id){ $(id).addEventListener('input', calculate); });
+  $('calc-btn').addEventListener('click', calculate);
+
+  calculate();
+})();
+</script>
+</body>
+</html>
