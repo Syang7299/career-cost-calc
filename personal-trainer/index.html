@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personal Trainer Certification Cost Calculator | CareerCost</title>
+<meta name="description" content="Free personal trainer certification cost calculator - enter your cert package and CPR/AED costs to see your total cost and how fast your training income pays it back.">
+<link rel="canonical" href="https://YOURDOMAIN.com/personal-trainer/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Personal Trainer Certification Cost Calculator">
+<meta property="og:description" content="See your total cost to get certified as a personal trainer and how fast your income pays it back.">
+<meta property="og:url" content="https://YOURDOMAIN.com/personal-trainer/">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Personal Trainer Certification Cost Calculator",
+  "url": "https://YOURDOMAIN.com/personal-trainer/",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any (web-based)",
+  "description": "Free calculator that turns personal trainer certification package and CPR/AED costs into a total cost and a personalized payback timeline.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does a personal trainer certification cost?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A self-study package from a major certifier (NASM, ACE, ISSA) typically runs $629-$1,900 depending on the level of support and materials included, plus $30-$60 for a required CPR/AED certification. Guided packages with mentor support and retake coverage can run up to $2,499." }
+    },
+    {
+      "@type": "Question",
+      "name": "How much do personal trainers actually make?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The average hourly wage for a personal trainer is around $25/hour as a gym employee, roughly $46,000/year full-time. Independent trainers who charge per session typically earn significantly more for the same volume - often close to double - but with less stability and no guaranteed hours." }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does it take to pay back a personal trainer certification?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Certification costs are small relative to training income, so most trainers earn back the cost within their first month or two of steady client work. The bigger factor is how fast you actually build a client base, not the certification cost itself." }
+    }
+  ]
+}
+</script>
+<!-- Google tag (gtag.js) placeholder — add once GA4 property exists -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #FAF6F1;
+    --surface: #FFFFFF;
+    --surface-soft: #F3EBE3;
+    --border: #E5D9CC;
+    --ink: #2B211A;
+    --ink-soft: #6B5D4F;
+    --ink-faint: #A69684;
+    --terracotta: #C1543C;
+    --terracotta-soft: rgba(193,84,60,0.10);
+    --sage: #7A8B6F;
+    --sage-soft: rgba(122,139,111,0.14);
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-body: 'Work Sans', system-ui, sans-serif;
+  }
+  *{ box-sizing: border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap{ max-width: 980px; margin: 0 auto; padding: 0 20px; }
+
+  header.site{ background: var(--ink); }
+  .site-nav{
+    max-width: 980px; margin: 0 auto; padding: 18px 20px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .brand{
+    font-family: var(--font-display); font-weight: 600; font-size: 20px; font-style: italic;
+    color: #fff; text-decoration: none;
+  }
+  .brand .accent{ color: #E8A491; font-style: normal; }
+  .site-nav a.link{
+    font-family: var(--font-body); font-size: 14px; font-weight: 600;
+    color: rgba(255,255,255,0.7); text-decoration: none; margin-left: 26px;
+  }
+  .site-nav a.link:hover{ color: #fff; }
+
+  main{ padding: 48px 0 80px; }
+
+  .eyebrow{
+    font-family: var(--font-body); font-size: 13px; font-weight: 700; letter-spacing: 0.05em;
+    color: var(--terracotta); text-transform: uppercase; margin: 0 0 12px;
+  }
+  h1{
+    font-family: var(--font-display); font-weight: 600; font-size: clamp(30px, 4.6vw, 44px);
+    line-height: 1.15; margin: 0 0 16px; letter-spacing: -0.01em; color: var(--ink);
+  }
+  .lede{ font-size: 16.5px; color: var(--ink-soft); line-height: 1.65; margin: 0 0 36px; max-width: 640px; }
+
+  .calc-layout{ display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 22px; align-items: start; }
+  @media (max-width: 800px){ .calc-layout{ grid-template-columns: 1fr; } }
+
+  .panel{
+    background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
+    padding: 28px;
+  }
+  .panel h2.panel-title{
+    font-family: var(--font-display); font-weight: 600; font-size: 19px; color: var(--ink);
+    margin: 0 0 20px;
+  }
+  .field-row{ display: grid; grid-template-columns: 1fr 130px; gap: 12px; align-items: center; margin-bottom: 15px; }
+  .field-row label{ font-family: var(--font-body); font-weight: 600; font-size: 14px; }
+  .field-row .hint{ display: block; font-weight: 400; font-size: 12px; color: var(--ink-faint); margin-top: 2px; }
+  .field-row input{
+    font-family: var(--font-body); font-size: 15px; color: var(--ink); text-align: right;
+    background: var(--surface-soft); border: 1px solid var(--border); border-radius: 9px;
+    padding: 10px 11px; width: 100%;
+  }
+  .field-row input:focus{ outline: none; border-color: var(--terracotta); }
+  .field-divider{ border: none; border-top: 1px solid var(--border); margin: 20px 0; }
+
+  .btn-primary{
+    font-family: var(--font-body); font-weight: 700; font-size: 15px;
+    color: #fff; background: var(--terracotta); border: none; border-radius: 10px;
+    padding: 14px 22px; cursor: pointer; width: 100%; margin-top: 8px;
+  }
+  .btn-primary:hover{ background: #A8452F; }
+
+  .results-panel{
+    background: var(--ink); border-radius: 16px; padding: 28px; color: #fff;
+    position: sticky; top: 20px;
+  }
+  .results-panel .quote-label{
+    font-family: var(--font-body); font-size: 13px; font-weight: 600; letter-spacing: 0.03em;
+    color: rgba(255,255,255,0.6); text-transform: uppercase; margin: 0 0 8px;
+  }
+  .results-panel .quote-amount{
+    font-family: var(--font-display); font-weight: 600; font-size: 38px; margin: 0 0 4px; color: #E8A491;
+  }
+  .results-panel .quote-sub{ font-size: 13.5px; color: rgba(255,255,255,0.55); margin: 0 0 22px; }
+  .breakdown-row{
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.12); font-size: 14px;
+  }
+  .breakdown-row .b-label{ color: rgba(255,255,255,0.7); }
+  .breakdown-row .b-value{ font-family: var(--font-body); font-weight: 700; }
+  .breakdown-row.total{ border-bottom: none; margin-top: 4px; padding-top: 16px; font-size: 15px; }
+  .breakdown-row.total .b-value{ color: var(--sage); font-size: 17px; }
+
+  .callout{
+    background: var(--sage-soft); border-radius: 12px; padding: 20px 22px; margin: 36px 0 0;
+  }
+  .callout p{ margin: 0; font-size: 14.5px; color: var(--ink); line-height: 1.7; }
+  .callout p b{ color: var(--sage); }
+
+  section.info{ margin-top: 68px; }
+  h2{
+    font-family: var(--font-display); font-weight: 600; font-size: 25px; color: var(--ink);
+    margin: 0 0 18px; letter-spacing: -0.005em;
+  }
+  section.info p{ font-size: 15.5px; line-height: 1.75; color: var(--ink-soft); margin: 0 0 16px; }
+
+  .term-grid{ display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin: 18px 0 8px; }
+  @media (max-width: 640px){ .term-grid{ grid-template-columns: 1fr; } }
+  .term-card{
+    background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px;
+  }
+  .term-card h3{
+    font-family: var(--font-display); font-size: 16px; font-weight: 600; margin: 0 0 6px; color: var(--terracotta);
+  }
+  .term-card p{ font-size: 13.5px; color: var(--ink-soft); margin: 0; line-height: 1.6; }
+
+  .faq-item{ border-bottom: 1px solid var(--border); padding: 20px 0; }
+  .faq-item h3{ font-family: var(--font-display); font-size: 17px; font-weight: 600; margin: 0 0 8px; color: var(--ink); }
+  .faq-item p{ font-size: 14.5px; color: var(--ink-soft); margin: 0; line-height: 1.7; }
+
+  footer{
+    border-top: 1px solid var(--border); margin-top: 70px; padding: 30px 0;
+    font-size: 12.5px; color: var(--ink-faint); text-align: center; line-height: 1.8;
+  }
+  footer a{ color: var(--terracotta); }
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="site-nav">
+    <a class="brand" href="/">Career<span class="accent">Cost</span></a>
+    <nav>
+      <a class="link" href="/">All Calculators</a>
+      <a class="link" href="#how-it-works">How it works</a>
+      <a class="link" href="#terms">Terms</a>
+      <a class="link" href="#faq">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <p class="eyebrow"><a href="/" style="color:inherit;text-decoration:none;">CareerCost</a> · Personal Trainer</p>
+  <h1>Personal Trainer Certification Cost Calculator</h1>
+  <p class="lede">Enter your certification package and CPR/AED costs to see your total cost to get certified - then find out how fast your training income pays it back.</p>
+
+  <div class="calc-layout">
+    <div class="panel">
+      <h2 class="panel-title">Your Certification</h2>
+
+      <div class="field-row">
+        <label for="f-cert">Certification package<span class="hint">Self-study: $629-$1,900 · Guided: up to $2,499</span></label>
+        <input type="number" id="f-cert" min="0" step="any" placeholder="0" value="629">
+      </div>
+      <div class="field-row">
+        <label for="f-cpr">CPR/AED certification<span class="hint">Typically $30-$60</span></label>
+        <input type="number" id="f-cpr" min="0" step="any" placeholder="0" value="45">
+      </div>
+
+      <hr class="field-divider">
+
+      <div class="field-row">
+        <label for="f-newincome">Expected annual training income<span class="hint">Gym-employed avg: ~$46k/year</span></label>
+        <input type="number" id="f-newincome" min="0" step="any" placeholder="0" value="46000">
+      </div>
+      <div class="field-row">
+        <label for="f-currentincome">Your current annual income<span class="hint">Optional - leave 0 if none</span></label>
+        <input type="number" id="f-currentincome" min="0" step="any" placeholder="0" value="0">
+      </div>
+
+      <button class="btn-primary" id="calc-btn" type="button">Recalculate</button>
+    </div>
+
+    <div class="results-panel">
+      <p class="quote-label">Total Cost to Get Certified</p>
+      <p class="quote-amount" id="total-cost">$0</p>
+      <p class="quote-sub">Doesn't include renewal fees (~$99-$129 every 2 years) or optional continuing education</p>
+
+      <div class="breakdown-row"><span class="b-label">Certification package</span><span class="b-value" id="b-cert">$0</span></div>
+      <div class="breakdown-row"><span class="b-label">CPR/AED certification</span><span class="b-value" id="b-cpr">$0</span></div>
+      <div class="breakdown-row"><span class="b-label">Annual income gain</span><span class="b-value" id="b-gain">$0</span></div>
+      <div class="breakdown-row total"><span class="b-label">Payback Period</span><span class="b-value" id="b-payback">—</span></div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p><b>Employed vs. independent:</b> The default above assumes a gym-employee wage (~$25/hr, ~$46k/year full-time). Independent trainers who charge per session (commonly $40-$100+) often earn close to double for the same hours, but without guaranteed hours or benefits - plug in your own realistic number rather than assuming the upside case.</p>
+  </div>
+
+  <section class="info" id="how-it-works">
+    <h2>How this calculator works</h2>
+    <p>Your total cost to get certified is your certification package plus a CPR/AED certification (required by most employers and certifying bodies) - two numbers that vary by which certifier and package level you choose, so this calculator uses your real quotes instead of a single national average.</p>
+    <p>Payback period uses the same formula as every calculator on this site: <b>Total Cost ÷ Annual Income Gain</b>. Because certification costs are small relative to training income, most trainers earn the cost back within their first month or two of steady client work - the real variable is how quickly you build a client base, not the certification cost itself.</p>
+  </section>
+
+  <section class="info" id="terms">
+    <h2>What's in the total cost</h2>
+    <div class="term-grid">
+      <div class="term-card">
+        <h3>Certification package</h3>
+        <p>Study materials plus your exam voucher from a certifier like NASM, ACE, or ISSA - self-study runs $629-$1,900, guided packages with mentor support run up to $2,499.</p>
+      </div>
+      <div class="term-card">
+        <h3>CPR/AED certification</h3>
+        <p>A separate, required credential most gyms and certifiers mandate before you can work with clients - typically $30-$60.</p>
+      </div>
+      <div class="term-card">
+        <h3>Renewal (ongoing, not one-time)</h3>
+        <p>Most certifications need renewing every 2 years, typically $99-$129 - a small recurring cost, not part of your initial total.</p>
+      </div>
+      <div class="term-card">
+        <h3>Employed vs. independent income</h3>
+        <p>Gym employees earn a steadier but lower wage (~$25/hr); independent trainers charging per session often earn close to double for the same hours.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="info" id="faq">
+    <h2>FAQ</h2>
+    <div class="faq-item">
+      <h3>How much does a personal trainer certification cost?</h3>
+      <p>A self-study package from a major certifier (NASM, ACE, ISSA) typically runs $629-$1,900 depending on the level of support and materials included, plus $30-$60 for a required CPR/AED certification. Guided packages with mentor support and retake coverage can run up to $2,499.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How much do personal trainers actually make?</h3>
+      <p>The average hourly wage for a personal trainer is around $25/hour as a gym employee, roughly $46,000/year full-time. Independent trainers who charge per session typically earn significantly more for the same volume - often close to double - but with less stability and no guaranteed hours.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How long does it take to pay back a personal trainer certification?</h3>
+      <p>Certification costs are small relative to training income, so most trainers earn back the cost within their first month or two of steady client work. The bigger factor is how fast you actually build a client base, not the certification cost itself.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  CareerCost is an independent tool and is not affiliated with NASM, ACE, ISSA, or any other certifying body, gym, or employer. Figures are general ranges - confirm exact costs with your chosen certifier before enrolling.
+</footer>
+
+<script>
+(function(){
+  const $ = (id) => document.getElementById(id);
+  const fmt = (n) => '$' + Math.round(n).toLocaleString('en-US');
+
+  function num(id){
+    const v = parseFloat($(id).value);
+    return isNaN(v) || v < 0 ? 0 : v;
+  }
+
+  function calculate(){
+    const cert = num('f-cert');
+    const cpr = num('f-cpr');
+    const newIncome = num('f-newincome');
+    const currentIncome = num('f-currentincome');
+
+    const totalCost = cert + cpr;
+    const annualGain = newIncome - currentIncome;
+
+    $('total-cost').textContent = fmt(totalCost);
+    $('b-cert').textContent = fmt(cert);
+    $('b-cpr').textContent = fmt(cpr);
+    $('b-gain').textContent = (annualGain >= 0 ? '' : '-') + fmt(Math.abs(annualGain)) + '/yr';
+
+    const paybackEl = $('b-payback');
+    if (annualGain <= 0){
+      paybackEl.textContent = 'N/A';
+    } else if (totalCost <= 0){
+      paybackEl.textContent = 'Immediate';
+    } else {
+      const paybackYears = totalCost / annualGain;
+      const paybackMonths = paybackYears * 12;
+      if (paybackMonths < 24){
+        const m = Math.ceil(paybackMonths);
+        paybackEl.textContent = m + (m === 1 ? ' month' : ' months');
+      } else {
+        paybackEl.textContent = paybackYears.toFixed(1) + ' years';
+      }
+    }
+  }
+
+  const inputIds = ['f-cert','f-cpr','f-newincome','f-currentincome'];
+  inputIds.forEach(function(id){ $(id).addEventListener('input', calculate); });
+  $('calc-btn').addEventListener('click', calculate);
+
+  calculate();
+})();
+</script>
+</body>
+</html>
