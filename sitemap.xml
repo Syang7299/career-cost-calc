@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://YOURDOMAIN.com/</loc>
+    <loc>https://careercost.com/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://YOURDOMAIN.com/cosmetology/</loc>
+    <loc>https://careercost.com/cosmetology/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://YOURDOMAIN.com/electrician/</loc>
+    <loc>https://careercost.com/electrician/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://YOURDOMAIN.com/cdl/</loc>
+    <loc>https://careercost.com/cdl/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://YOURDOMAIN.com/real-estate/</loc>
+    <loc>https://careercost.com/real-estate/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://YOURDOMAIN.com/personal-trainer/</loc>
+    <loc>https://careercost.com/personal-trainer/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
