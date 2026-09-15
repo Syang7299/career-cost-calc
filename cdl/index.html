@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CDL Cost Calculator: Truck Driving School Cost &amp; Payback Time | CareerCost</title>
+<meta name="description" content="Free CDL cost calculator - enter your truck driving school tuition and fees to see your total cost and how many months it takes a first-year driver's income to pay it back.">
+<link rel="canonical" href="https://YOURDOMAIN.com/cdl/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="CDL Cost Calculator">
+<meta property="og:description" content="See your total cost to get a CDL and how fast a first-year driver's income pays it back.">
+<meta property="og:url" content="https://YOURDOMAIN.com/cdl/">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "CDL Cost Calculator",
+  "url": "https://YOURDOMAIN.com/cdl/",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any (web-based)",
+  "description": "Free calculator that turns CDL school tuition, permit, testing, and physical exam fees into a total cost and a personalized payback timeline.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does it cost to get a CDL?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Self-paid CDL school runs $3,000 to $10,000 - community colleges typically $3,000-$7,000, private schools $4,000-$8,000 for a 3-7 week course. On top of tuition, budget $75-$300 in state permit, license, and skills test fees, plus a $75-$150 DOT physical exam." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you get a CDL for free through company-sponsored training?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Many carriers pay you to train (often several hundred dollars a week) instead of charging tuition, in exchange for a signed commitment to drive for them - typically 12 to 24 months. Leaving early usually means repaying a prorated share of the training cost, often $3,000-$7,000, so it isn't actually free if you don't finish the contract." }
+    },
+    {
+      "@type": "Question",
+      "name": "How much do first-year CDL drivers make?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Most new CDL-A drivers start between $35,000 and $58,000 in their first year, commonly paid per mile (roughly $0.40-$0.55/mile for rookies), with pay typically increasing at the 6-month and 1-year marks." }
+    }
+  ]
+}
+</script>
+<!-- Google tag (gtag.js) placeholder — add once GA4 property exists -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #FAF6F1;
+    --surface: #FFFFFF;
+    --surface-soft: #F3EBE3;
+    --border: #E5D9CC;
+    --ink: #2B211A;
+    --ink-soft: #6B5D4F;
+    --ink-faint: #A69684;
+    --terracotta: #C1543C;
+    --terracotta-soft: rgba(193,84,60,0.10);
+    --sage: #7A8B6F;
+    --sage-soft: rgba(122,139,111,0.14);
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-body: 'Work Sans', system-ui, sans-serif;
+  }
+  *{ box-sizing: border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap{ max-width: 980px; margin: 0 auto; padding: 0 20px; }
+
+  header.site{ background: var(--ink); }
+  .site-nav{
+    max-width: 980px; margin: 0 auto; padding: 18px 20px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .brand{
+    font-family: var(--font-display); font-weight: 600; font-size: 20px; font-style: italic;
+    color: #fff; text-decoration: none;
+  }
+  .brand .accent{ color: #E8A491; font-style: normal; }
+  .site-nav a.link{
+    font-family: var(--font-body); font-size: 14px; font-weight: 600;
+    color: rgba(255,255,255,0.7); text-decoration: none; margin-left: 26px;
+  }
+  .site-nav a.link:hover{ color: #fff; }
+
+  main{ padding: 48px 0 80px; }
+
+  .eyebrow{
+    font-family: var(--font-body); font-size: 13px; font-weight: 700; letter-spacing: 0.05em;
+    color: var(--terracotta); text-transform: uppercase; margin: 0 0 12px;
+  }
+  h1{
+    font-family: var(--font-display); font-weight: 600; font-size: clamp(30px, 4.6vw, 44px);
+    line-height: 1.15; margin: 0 0 16px; letter-spacing: -0.01em; color: var(--ink);
+  }
+  .lede{ font-size: 16.5px; color: var(--ink-soft); line-height: 1.65; margin: 0 0 36px; max-width: 640px; }
+
+  .calc-layout{ display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 22px; align-items: start; }
+  @media (max-width: 800px){ .calc-layout{ grid-template-columns: 1fr; } }
+
+  .panel{
+    background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
+    padding: 28px;
+  }
+  .panel h2.panel-title{
+    font-family: var(--font-display); font-weight: 600; font-size: 19px; color: var(--ink);
+    margin: 0 0 20px;
+  }
+  .field-row{ display: grid; grid-template-columns: 1fr 130px; gap: 12px; align-items: center; margin-bottom: 15px; }
+  .field-row label{ font-family: var(--font-body); font-weight: 600; font-size: 14px; }
+  .field-row .hint{ display: block; font-weight: 400; font-size: 12px; color: var(--ink-faint); margin-top: 2px; }
+  .field-row input{
+    font-family: var(--font-body); font-size: 15px; color: var(--ink); text-align: right;
+    background: var(--surface-soft); border: 1px solid var(--border); border-radius: 9px;
+    padding: 10px 11px; width: 100%;
+  }
+  .field-row input:focus{ outline: none; border-color: var(--terracotta); }
+  .field-divider{ border: none; border-top: 1px solid var(--border); margin: 20px 0; }
+
+  .btn-primary{
+    font-family: var(--font-body); font-weight: 700; font-size: 15px;
+    color: #fff; background: var(--terracotta); border: none; border-radius: 10px;
+    padding: 14px 22px; cursor: pointer; width: 100%; margin-top: 8px;
+  }
+  .btn-primary:hover{ background: #A8452F; }
+
+  .results-panel{
+    background: var(--ink); border-radius: 16px; padding: 28px; color: #fff;
+    position: sticky; top: 20px;
+  }
+  .results-panel .quote-label{
+    font-family: var(--font-body); font-size: 13px; font-weight: 600; letter-spacing: 0.03em;
+    color: rgba(255,255,255,0.6); text-transform: uppercase; margin: 0 0 8px;
+  }
+  .results-panel .quote-amount{
+    font-family: var(--font-display); font-weight: 600; font-size: 38px; margin: 0 0 4px; color: #E8A491;
+  }
+  .results-panel .quote-sub{ font-size: 13.5px; color: rgba(255,255,255,0.55); margin: 0 0 22px; }
+  .breakdown-row{
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.12); font-size: 14px;
+  }
+  .breakdown-row .b-label{ color: rgba(255,255,255,0.7); }
+  .breakdown-row .b-value{ font-family: var(--font-body); font-weight: 700; }
+  .breakdown-row.total{ border-bottom: none; margin-top: 4px; padding-top: 16px; font-size: 15px; }
+  .breakdown-row.total .b-value{ color: var(--sage); font-size: 17px; }
+
+  section.info{ margin-top: 68px; }
+  h2{
+    font-family: var(--font-display); font-weight: 600; font-size: 25px; color: var(--ink);
+    margin: 0 0 18px; letter-spacing: -0.005em;
+  }
+  section.info p{ font-size: 15.5px; line-height: 1.75; color: var(--ink-soft); margin: 0 0 16px; }
+
+  .term-grid{ display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin: 18px 0 8px; }
+  @media (max-width: 640px){ .term-grid{ grid-template-columns: 1fr; } }
+  .term-card{
+    background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px;
+  }
+  .term-card h3{
+    font-family: var(--font-display); font-size: 16px; font-weight: 600; margin: 0 0 6px; color: var(--terracotta);
+  }
+  .term-card p{ font-size: 13.5px; color: var(--ink-soft); margin: 0; line-height: 1.6; }
+
+  .faq-item{ border-bottom: 1px solid var(--border); padding: 20px 0; }
+  .faq-item h3{ font-family: var(--font-display); font-size: 17px; font-weight: 600; margin: 0 0 8px; color: var(--ink); }
+  .faq-item p{ font-size: 14.5px; color: var(--ink-soft); margin: 0; line-height: 1.7; }
+
+  .callout{
+    background: var(--sage-soft); border-radius: 12px; padding: 20px 22px; margin: 0 0 24px;
+  }
+  .callout p{ margin: 0; font-size: 14.5px; color: var(--ink); line-height: 1.7; }
+  .callout p b{ color: var(--sage); }
+
+  footer{
+    border-top: 1px solid var(--border); margin-top: 70px; padding: 30px 0;
+    font-size: 12.5px; color: var(--ink-faint); text-align: center; line-height: 1.8;
+  }
+  footer a{ color: var(--terracotta); }
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="site-nav">
+    <a class="brand" href="/">Career<span class="accent">Cost</span></a>
+    <nav>
+      <a class="link" href="/">All Calculators</a>
+      <a class="link" href="#how-it-works">How it works</a>
+      <a class="link" href="#terms">Terms</a>
+      <a class="link" href="#faq">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <p class="eyebrow"><a href="/" style="color:inherit;text-decoration:none;">CareerCost</a> · CDL</p>
+  <h1>CDL Cost Calculator</h1>
+  <p class="lede">Enter your truck driving school's real numbers to see your total cost to get licensed - then find out how many months it takes a first-year driver's income to earn that investment back.</p>
+
+  <div class="calc-layout">
+    <div class="panel">
+      <h2 class="panel-title">Your CDL Program</h2>
+
+      <div class="field-row">
+        <label for="f-tuition">School tuition<span class="hint">Community college: $3k-7k · Private: $4k-8k</span></label>
+        <input type="number" id="f-tuition" min="0" step="any" placeholder="0" value="6000">
+      </div>
+      <div class="field-row">
+        <label for="f-weeks">Program length<span class="hint">Weeks - most programs run 3-7 weeks</span></label>
+        <input type="number" id="f-weeks" min="0" step="any" placeholder="0" value="4">
+      </div>
+      <div class="field-row">
+        <label for="f-permit">Permit &amp; license fees<span class="hint">State fees - typically $50-$250</span></label>
+        <input type="number" id="f-permit" min="0" step="any" placeholder="0" value="150">
+      </div>
+      <div class="field-row">
+        <label for="f-skillstest">Skills test fee<span class="hint">Typically $100-$250</span></label>
+        <input type="number" id="f-skillstest" min="0" step="any" placeholder="0" value="150">
+      </div>
+      <div class="field-row">
+        <label for="f-physical">DOT physical exam<span class="hint">Typically $75-$150</span></label>
+        <input type="number" id="f-physical" min="0" step="any" placeholder="0" value="100">
+      </div>
+
+      <hr class="field-divider">
+
+      <div class="field-row">
+        <label for="f-newincome">Expected first-year driver income<span class="hint">Typically $35k-$58k</span></label>
+        <input type="number" id="f-newincome" min="0" step="any" placeholder="0" value="48000">
+      </div>
+      <div class="field-row">
+        <label for="f-currentincome">Your current annual income<span class="hint">Optional - leave 0 if none</span></label>
+        <input type="number" id="f-currentincome" min="0" step="any" placeholder="0" value="0">
+      </div>
+
+      <button class="btn-primary" id="calc-btn" type="button">Recalculate</button>
+    </div>
+
+    <div class="results-panel">
+      <p class="quote-label">Total Cost to Get Licensed</p>
+      <p class="quote-amount" id="total-cost">$0</p>
+      <p class="quote-sub" id="time-to-license">Licensed in about — weeks</p>
+
+      <div class="breakdown-row"><span class="b-label">School tuition</span><span class="b-value" id="b-tuition">$0</span></div>
+      <div class="breakdown-row"><span class="b-label">Permit &amp; license fees</span><span class="b-value" id="b-permit">$0</span></div>
+      <div class="breakdown-row"><span class="b-label">Skills test fee</span><span class="b-value" id="b-skillstest">$0</span></div>
+      <div class="breakdown-row"><span class="b-label">DOT physical exam</span><span class="b-value" id="b-physical">$0</span></div>
+      <div class="breakdown-row"><span class="b-label">Annual income gain</span><span class="b-value" id="b-gain">$0</span></div>
+      <div class="breakdown-row total"><span class="b-label">Payback Period</span><span class="b-value" id="b-payback">—</span></div>
+    </div>
+  </div>
+
+  <div class="callout" style="margin-top:36px;">
+    <p><b>Don't want to pay upfront?</b> Many carriers run company-sponsored CDL training - you earn a weekly wage while training instead of paying tuition, in exchange for a signed 12-24 month commitment to drive for them. Leaving early usually means repaying a prorated share of the training cost (often $3,000-$7,000), so run this calculator with $0 tuition to model that path, and read the contract's payback clause carefully before signing.</p>
+  </div>
+
+  <section class="info" id="how-it-works">
+    <h2>How this calculator works</h2>
+    <p>Your total cost to get a CDL is school tuition plus the state permit, skills test, and license fees, plus your DOT physical - four numbers that vary by school and state, so this calculator uses your real quotes instead of a single national average.</p>
+    <p>Payback period uses the same formula as every calculator on this site: <b>Total Cost ÷ Annual Income Gain</b>. If CDL school costs $6,400 total and you'll earn $48,000 more per year than you do now, that pays back in weeks, not years - which is exactly why trucking is often pitched as a fast-payback career change.</p>
+  </section>
+
+  <section class="info" id="terms">
+    <h2>What's in the total cost</h2>
+    <div class="term-grid">
+      <div class="term-card">
+        <h3>School tuition</h3>
+        <p>The training program itself. Community colleges run $3,000-$7,000; private schools run $4,000-$8,000 for a 3-7 week course.</p>
+      </div>
+      <div class="term-card">
+        <h3>Permit &amp; license fees</h3>
+        <p>State charges for your Commercial Learner's Permit and CDL issuance - typically $50-$250 combined, varying widely by state.</p>
+      </div>
+      <div class="term-card">
+        <h3>Skills test fee</h3>
+        <p>The road test that actually earns you the CDL, separate from school tuition - typically $100-$250.</p>
+      </div>
+      <div class="term-card">
+        <h3>DOT physical exam</h3>
+        <p>A required medical exam, typically $75-$150 - often free or discounted through your school, a carrier, or WIOA funding.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="info" id="faq">
+    <h2>FAQ</h2>
+    <div class="faq-item">
+      <h3>How much does it cost to get a CDL?</h3>
+      <p>Self-paid CDL school runs $3,000 to $10,000 - community colleges typically $3,000-$7,000, private schools $4,000-$8,000 for a 3-7 week course. On top of tuition, budget $75-$300 in state permit, license, and skills test fees, plus a $75-$150 DOT physical exam.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Can you get a CDL for free through company-sponsored training?</h3>
+      <p>Yes. Many carriers pay you to train (often several hundred dollars a week) instead of charging tuition, in exchange for a signed commitment to drive for them - typically 12 to 24 months. Leaving early usually means repaying a prorated share of the training cost, often $3,000-$7,000, so it isn't actually free if you don't finish the contract.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How much do first-year CDL drivers make?</h3>
+      <p>Most new CDL-A drivers start between $35,000 and $58,000 in their first year, commonly paid per mile (roughly $0.40-$0.55/mile for rookies), with pay typically increasing at the 6-month and 1-year marks.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  CareerCost is an independent tool and is not affiliated with any trucking company, training program, or licensing agency. Figures are general ranges - confirm exact costs and contract terms with your chosen school or carrier before enrolling.
+</footer>
+
+<script>
+(function(){
+  const $ = (id) => document.getElementById(id);
+  const fmt = (n) => '$' + Math.round(n).toLocaleString('en-US');
+
+  function num(id){
+    const v = parseFloat($(id).value);
+    return isNaN(v) || v < 0 ? 0 : v;
+  }
+
+  function calculate(){
+    const tuition = num('f-tuition');
+    const weeks = num('f-weeks');
+    const permit = num('f-permit');
+    const skillsTest = num('f-skillstest');
+    const physical = num('f-physical');
+    const newIncome = num('f-newincome');
+    const currentIncome = num('f-currentincome');
+
+    const totalCost = tuition + permit + skillsTest + physical;
+    const annualGain = newIncome - currentIncome;
+
+    $('total-cost').textContent = fmt(totalCost);
+    $('time-to-license').textContent = 'Licensed in about ' + weeks + ' weeks';
+    $('b-tuition').textContent = fmt(tuition);
+    $('b-permit').textContent = fmt(permit);
+    $('b-skillstest').textContent = fmt(skillsTest);
+    $('b-physical').textContent = fmt(physical);
+    $('b-gain').textContent = (annualGain >= 0 ? '' : '-') + fmt(Math.abs(annualGain)) + '/yr';
+
+    const paybackEl = $('b-payback');
+    if (annualGain <= 0){
+      paybackEl.textContent = 'N/A';
+    } else if (totalCost <= 0){
+      paybackEl.textContent = 'Immediate';
+    } else {
+      const paybackYears = totalCost / annualGain;
+      const paybackMonths = paybackYears * 12;
+      if (paybackMonths < 24){
+        paybackEl.textContent = Math.ceil(paybackMonths) + ' months';
+      } else {
+        paybackEl.textContent = paybackYears.toFixed(1) + ' years';
+      }
+    }
+  }
+
+  const inputIds = ['f-tuition','f-weeks','f-permit','f-skillstest','f-physical','f-newincome','f-currentincome'];
+  inputIds.forEach(function(id){ $(id).addEventListener('input', calculate); });
+  $('calc-btn').addEventListener('click', calculate);
+
+  calculate();
+})();
+</script>
+</body>
+</html>
