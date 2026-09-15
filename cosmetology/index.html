@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cosmetology School Cost Calculator: Total Cost &amp; Payback Time | CareerCost</title>
+<meta name="description" content="Free cosmetology school cost calculator - enter your program's tuition, kit, and exam fees to see your total cost, licensing timeline, and how long it takes to earn it back.">
+<link rel="canonical" href="https://YOURDOMAIN.com/cosmetology/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Cosmetology School Cost Calculator">
+<meta property="og:description" content="See your total cost to get licensed and exactly how long it takes to earn that investment back.">
+<meta property="og:url" content="https://YOURDOMAIN.com/cosmetology/">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Cosmetology School Cost Calculator",
+  "url": "https://YOURDOMAIN.com/cosmetology/",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any (web-based)",
+  "description": "Free calculator that turns cosmetology school tuition, kit, and exam fees into a total licensing cost and a personalized payback timeline.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does cosmetology school cost?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Community college programs commonly run $5,000 to $10,000 for in-state students, while private cosmetology schools run $12,000 to $20,000. On top of tuition, budget $800 to $2,000 for a starter kit and $100 to $250 for state licensing exam fees." }
+    },
+    {
+      "@type": "Question",
+      "name": "How many training hours does a cosmetology license require?",
+      "acceptedAnswer": { "@type": "Answer", "text": "It depends on the state. Requirements range from 1,000 hours (Texas, New York, California) to 2,100 hours (Oregon, one of the highest), with most states falling between 1,000 and 1,600 hours." }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does it take to pay back the cost of cosmetology school?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Most graduates recoup their education investment within two to three years of licensure, though it depends heavily on your income before and after training. The math is simple: Payback Period = Total Cost / Annual Income Gain." }
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #FAF6F1;
+    --surface: #FFFFFF;
+    --surface-soft: #F3EBE3;
+    --border: #E5D9CC;
+    --ink: #2B211A;
+    --ink-soft: #6B5D4F;
+    --ink-faint: #A69684;
+    --terracotta: #C1543C;
+    --terracotta-soft: rgba(193,84,60,0.10);
+    --sage: #7A8B6F;
+    --sage-soft: rgba(122,139,111,0.14);
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-body: 'Work Sans', system-ui, sans-serif;
+  }
+  *{ box-sizing: border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap{ max-width: 980px; margin: 0 auto; padding: 0 20px; }
+
+  header.site{ background: var(--ink); }
+  .site-nav{
+    max-width: 980px; margin: 0 auto; padding: 18px 20px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .brand{
+    font-family: var(--font-display); font-weight: 600; font-size: 20px; font-style: italic;
+    color: #fff; text-decoration: none;
+  }
+  .brand .accent{ color: #E8A491; font-style: normal; }
+  .site-nav a.link{
+    font-family: var(--font-body); font-size: 14px; font-weight: 600;
+    color: rgba(255,255,255,0.7); text-decoration: none; margin-left: 26px;
+  }
+  .site-nav a.link:hover{ color: #fff; }
+
+  main{ padding: 48px 0 80px; }
+
+  .eyebrow{
+    font-family: var(--font-body); font-size: 13px; font-weight: 700; letter-spacing: 0.05em;
+    color: var(--terracotta); text-transform: uppercase; margin: 0 0 12px;
+  }
+  h1{
+    font-family: var(--font-display); font-weight: 600; font-size: clamp(30px, 4.6vw, 44px);
+    line-height: 1.15; margin: 0 0 16px; letter-spacing: -0.01em; color: var(--ink);
+  }
+  .lede{ font-size: 16.5px; color: var(--ink-soft); line-height: 1.65; margin: 0 0 36px; max-width: 640px; }
+
+  .calc-layout{ display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 22px; align-items: start; }
+  @media (max-width: 800px){ .calc-layout{ grid-template-columns: 1fr; } }
+
+  .panel{
+    background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
+    padding: 28px;
+  }
+  .panel h2.panel-title{
+    font-family: var(--font-display); font-weight: 600; font-size: 19px; color: var(--ink);
+    margin: 0 0 20px;
+  }
+  .field-row{ display: grid; grid-template-columns: 1fr 130px; gap: 12px; align-items: center; margin-bottom: 15px; }
+  .field-row label{ font-family: var(--font-body); font-weight: 600; font-size: 14px; }
+  .field-row .hint{ display: block; font-weight: 400; font-size: 12px; color: var(--ink-faint); margin-top: 2px; }
+  .field-row input{
+    font-family: var(--font-body); font-size: 15px; color: var(--ink); text-align: right;
+    background: var(--surface-soft); border: 1px solid var(--border); border-radius: 9px;
+    padding: 10px 11px; width: 100%;
+  }
+  .field-row input:focus{ outline: none; border-color: var(--terracotta); }
+  .field-divider{ border: none; border-top: 1px solid var(--border); margin: 20px 0; }
+
+  .btn-primary{
+    font-family: var(--font-body); font-weight: 700; font-size: 15px;
+    color: #fff; background: var(--terracotta); border: none; border-radius: 10px;
+    padding: 14px 22px; cursor: pointer; width: 100%; margin-top: 8px;
+  }
+  .btn-primary:hover{ background: #A8452F; }
+
+  .calc-note{
+    font-size: 12.5px; color: #8A5A2B; background: rgba(193,84,60,0.08); border-radius: 8px;
+    padding: 9px 12px; margin: 12px 0 0; display: none;
+  }
+
+  .results-panel{
+    background: var(--ink); border-radius: 16px; padding: 28px; color: #fff;
+    position: sticky; top: 20px;
+  }
+  .results-panel .quote-label{
+    font-family: var(--font-body); font-size: 13px; font-weight: 600; letter-spacing: 0.03em;
+    color: rgba(255,255,255,0.6); text-transform: uppercase; margin: 0 0 8px;
+  }
+  .results-panel .quote-amount{
+    font-family: var(--font-display); font-weight: 600; font-size: 38px; margin: 0 0 4px; color: #E8A491;
+  }
+  .results-panel .quote-sub{ font-size: 13.5px; color: rgba(255,255,255,0.55); margin: 0 0 22px; }
+  .breakdown-row{
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.12); font-size: 14px;
+  }
+  .breakdown-row .b-label{ color: rgba(255,255,255,0.7); }
+  .breakdown-row .b-value{ font-family: var(--font-body); font-weight: 700; }
+  .breakdown-row.total{ border-bottom: none; margin-top: 4px; padding-top: 16px; font-size: 15px; }
+  .breakdown-row.total .b-value{ color: var(--sage); font-size: 17px; }
+
+  section.info{ margin-top: 68px; }
+  h2{
+    font-family: var(--font-display); font-weight: 600; font-size: 25px; color: var(--ink);
+    margin: 0 0 18px; letter-spacing: -0.005em;
+  }
+  section.info p{ font-size: 15.5px; line-height: 1.75; color: var(--ink-soft); margin: 0 0 16px; }
+
+  .term-grid{ display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin: 18px 0 8px; }
+  @media (max-width: 640px){ .term-grid{ grid-template-columns: 1fr; } }
+  .term-card{
+    background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px;
+  }
+  .term-card h3{
+    font-family: var(--font-display); font-size: 16px; font-weight: 600; margin: 0 0 6px; color: var(--terracotta);
+  }
+  .term-card p{ font-size: 13.5px; color: var(--ink-soft); margin: 0; line-height: 1.6; }
+
+  table.state-table{ width: 100%; border-collapse: collapse; margin: 8px 0 24px; font-size: 14.5px; }
+  table.state-table th{
+    text-align: left; font-family: var(--font-display); font-weight: 600; color: #fff;
+    background: var(--ink); padding: 11px 14px; font-size: 13px;
+  }
+  table.state-table td{ padding: 11px 14px; border-bottom: 1px solid var(--border); color: var(--ink-soft); }
+  table.state-table tr:nth-child(even) td{ background: var(--surface-soft); }
+  table.state-table td:first-child{ font-weight: 600; color: var(--ink); }
+
+  .faq-item{ border-bottom: 1px solid var(--border); padding: 20px 0; }
+  .faq-item h3{ font-family: var(--font-display); font-size: 17px; font-weight: 600; margin: 0 0 8px; color: var(--ink); }
+  .faq-item p{ font-size: 14.5px; color: var(--ink-soft); margin: 0; line-height: 1.7; }
+
+  footer{
+    border-top: 1px solid var(--border); margin-top: 70px; padding: 30px 0;
+    font-size: 12.5px; color: var(--ink-faint); text-align: center; line-height: 1.8;
+  }
+  footer a{ color: var(--terracotta); }
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="site-nav">
+    <a class="brand" href="/">Career<span class="accent">Cost</span></a>
+    <nav>
+      <a class="link" href="/">All Calculators</a>
+      <a class="link" href="#how-it-works">How it works</a>
+      <a class="link" href="#states">By state</a>
+      <a class="link" href="#faq">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <p class="eyebrow"><a href="/" style="color:inherit;text-decoration:none;">CareerCost</a> · Cosmetology</p>
+  <h1>Cosmetology School Cost Calculator</h1>
+  <p class="lede">Enter your program's real numbers to see your total cost to get licensed - then find out exactly how many months it takes to earn that investment back once you're working.</p>
+
+  <div class="calc-layout">
+    <div class="panel">
+      <h2 class="panel-title">Your Program</h2>
+
+      <div class="field-row">
+        <label for="f-tuition">Tuition<span class="hint">Community college: $5k-10k · Private: $12k-20k</span></label>
+        <input type="number" id="f-tuition" min="0" step="any" placeholder="0" value="15000">
+      </div>
+      <div class="field-row">
+        <label for="f-kit">Kit &amp; supplies<span class="hint">Typically $800-$2,000</span></label>
+        <input type="number" id="f-kit" min="0" step="any" placeholder="0" value="1400">
+      </div>
+      <div class="field-row">
+        <label for="f-exam">Licensing &amp; exam fees<span class="hint">Typically $100-$250</span></label>
+        <input type="number" id="f-exam" min="0" step="any" placeholder="0" value="175">
+      </div>
+      <div class="field-row">
+        <label for="f-hours">Required training hours<span class="hint">1,000-2,100 depending on state</span></label>
+        <input type="number" id="f-hours" min="0" step="1" placeholder="0" value="1200">
+      </div>
+      <div class="field-row">
+        <label for="f-hoursweek">Hours you can study per week<span class="hint">Full-time programs run 25-35/week</span></label>
+        <input type="number" id="f-hoursweek" min="1" step="1" placeholder="0" value="30">
+      </div>
+
+      <hr class="field-divider">
+
+      <div class="field-row">
+        <label for="f-newincome">Expected annual income once licensed<span class="hint">Entry-level: typically $20k-$30k</span></label>
+        <input type="number" id="f-newincome" min="0" step="any" placeholder="0" value="25000">
+      </div>
+      <div class="field-row">
+        <label for="f-currentincome">Your current annual income<span class="hint">Optional - leave 0 if none</span></label>
+        <input type="number" id="f-currentincome" min="0" step="any" placeholder="0" value="0">
+      </div>
+
+      <p class="calc-note" id="calc-note"></p>
+      <button class="btn-primary" id="calc-btn" type="button">Recalculate</button>
+    </div>
+
+    <div class="results-panel">
+      <p class="quote-label">Total Cost to Get Licensed</p>
+      <p class="quote-amount" id="total-cost">$0</p>
+      <p class="quote-sub" id="time-to-license">Licensed in — weeks</p>
+
+      <div class="breakdown-row"><span class="b-label">Tuition</span><span class="b-value" id="b-tuition">$0</span></div>
+      <div class="breakdown-row"><span class="b-label">Kit &amp; supplies</span><span class="b-value" id="b-kit">$0</span></div>
+      <div class="breakdown-row"><span class="b-label">Licensing &amp; exam fees</span><span class="b-value" id="b-exam">$0</span></div>
+      <div class="breakdown-row"><span class="b-label">Annual income gain</span><span class="b-value" id="b-gain">$0</span></div>
+      <div class="breakdown-row total"><span class="b-label">Payback Period</span><span class="b-value" id="b-payback">—</span></div>
+    </div>
+  </div>
+
+  <section class="info" id="how-it-works">
+    <h2>How this calculator works</h2>
+    <p>Your total cost to get licensed is tuition plus your starter kit plus state exam and licensing fees - three numbers that vary a lot by school and state, so this calculator uses your real quotes instead of a single national average.</p>
+    <p>Payback period uses the simplest honest math: <b>Total Cost ÷ Annual Income Gain</b>. If cosmetology school costs $15,000 total and you'll earn $10,000 more per year than you do now, that's a 1.5-year (18-month) payback - the same math schools themselves use when they talk about return on investment.</p>
+  </section>
+
+  <section class="info" id="states">
+    <h2>Training hours by state</h2>
+    <p>Required hours directly affect how long training takes and often how much it costs, since programs are frequently priced per hour. Requirements range widely:</p>
+    <table class="state-table">
+      <tr><th>State</th><th>Required hours</th></tr>
+      <tr><td>Texas, New York, California</td><td>1,000</td></tr>
+      <tr><td>Arkansas</td><td>1,200</td></tr>
+      <tr><td>Colorado</td><td>1,500</td></tr>
+      <tr><td>Arizona</td><td>1,600</td></tr>
+      <tr><td>Oregon</td><td>2,100</td></tr>
+    </table>
+    <p>Most other states fall between 1,000 and 1,600 hours. Always confirm your specific state's requirement with your state board before enrolling - this table covers a few reference points, not all 50 states.</p>
+  </section>
+
+  <section class="info" id="terms">
+    <h2>What's in the total cost</h2>
+    <div class="term-grid">
+      <div class="term-card">
+        <h3>Tuition</h3>
+        <p>The program itself. Community college programs run $5,000-$10,000 for in-state students; private cosmetology schools run $12,000-$20,000.</p>
+      </div>
+      <div class="term-card">
+        <h3>Kit &amp; supplies</h3>
+        <p>Shears, styling tools, mannequin heads, and products you'll use throughout training - typically $800 to $2,000 depending on quality.</p>
+      </div>
+      <div class="term-card">
+        <h3>Licensing &amp; exam fees</h3>
+        <p>Your state board's written and practical exam fees, typically $100-$250, separate from tuition.</p>
+      </div>
+      <div class="term-card">
+        <h3>Payback period</h3>
+        <p>How long it takes your new income (above whatever you earn now) to cover the total cost above - the real measure of whether the investment paid off.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="info" id="faq">
+    <h2>FAQ</h2>
+    <div class="faq-item">
+      <h3>How much does cosmetology school cost?</h3>
+      <p>Community college programs commonly run $5,000 to $10,000 for in-state students, while private cosmetology schools run $12,000 to $20,000. On top of tuition, budget $800 to $2,000 for a starter kit and $100 to $250 for state licensing exam fees.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How many training hours does a cosmetology license require?</h3>
+      <p>It depends on the state. Requirements range from 1,000 hours (Texas, New York, California) to 2,100 hours (Oregon, one of the highest), with most states falling between 1,000 and 1,600 hours.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How long does it take to pay back the cost of cosmetology school?</h3>
+      <p>Most graduates recoup their education investment within two to three years of licensure, though it depends heavily on your income before and after training. The math is simple: Payback Period = Total Cost ÷ Annual Income Gain.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  This calculator is an independent tool and is not affiliated with any cosmetology school, state licensing board, or accrediting body. Figures are general ranges - confirm exact costs and requirements with your chosen school and state board before enrolling.
+</footer>
+
+<script>
+(function(){
+  const $ = (id) => document.getElementById(id);
+  const fmt = (n) => '$' + Math.round(n).toLocaleString('en-US');
+
+  function num(id){
+    const v = parseFloat($(id).value);
+    return isNaN(v) || v < 0 ? 0 : v;
+  }
+
+  function calculate(){
+    const tuition = num('f-tuition');
+    const kit = num('f-kit');
+    const exam = num('f-exam');
+    const hours = num('f-hours');
+    let hoursPerWeek = num('f-hoursweek');
+    const newIncome = num('f-newincome');
+    const currentIncome = num('f-currentincome');
+
+    const noteEl = $('calc-note');
+    if (hoursPerWeek <= 0){
+      hoursPerWeek = 1;
+      noteEl.textContent = 'Hours per week must be at least 1 - defaulted to 1 for this calculation.';
+      noteEl.style.display = 'block';
+    } else {
+      noteEl.style.display = 'none';
+    }
+
+    const totalCost = tuition + kit + exam;
+    const weeksToLicense = hours / hoursPerWeek;
+    const annualGain = newIncome - currentIncome;
+
+    $('total-cost').textContent = fmt(totalCost);
+    $('time-to-license').textContent = 'Licensed in about ' + Math.ceil(weeksToLicense) + ' weeks of training';
+    $('b-tuition').textContent = fmt(tuition);
+    $('b-kit').textContent = fmt(kit);
+    $('b-exam').textContent = fmt(exam);
+    $('b-gain').textContent = (annualGain >= 0 ? '' : '-') + fmt(Math.abs(annualGain)) + '/yr';
+
+    const paybackEl = $('b-payback');
+    if (annualGain <= 0){
+      paybackEl.textContent = 'N/A';
+    } else {
+      const paybackYears = totalCost / annualGain;
+      const paybackMonths = paybackYears * 12;
+      if (paybackMonths < 24){
+        paybackEl.textContent = Math.ceil(paybackMonths) + ' months';
+      } else {
+        paybackEl.textContent = paybackYears.toFixed(1) + ' years';
+      }
+    }
+  }
+
+  const inputIds = ['f-tuition','f-kit','f-exam','f-hours','f-hoursweek','f-newincome','f-currentincome'];
+  inputIds.forEach(function(id){ $(id).addEventListener('input', calculate); });
+  $('calc-btn').addEventListener('click', calculate);
+
+  calculate();
+})();
+</script>
+</body>
+</html>
