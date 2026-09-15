@@ -28,7 +28,7 @@
   "description": "Cosmetology, electrician, CDL, real estate, and personal trainer licenses compared by real total cost and payback time - not a single blended national average.",
   "author": { "@type": "Organization", "name": "CareerCost" },
   "datePublished": "2026-09-15T00:00:00+00:00",
-  "dateModified": "2026-09-15T00:00:00+00:00",
+  "dateModified": "2026-09-15T06:00:00+00:00",
   "mainEntityOfPage": "https://careercost.com/guides/cheapest-licenses-compared/"
 }
 </script>
@@ -52,6 +52,17 @@
       "name": "Why do these numbers differ from other 'cheapest career' articles?",
       "acceptedAnswer": { "@type": "Answer", "text": "Most comparison articles quote a single rough average per career. These numbers come directly from CareerCost's own calculators, each built from verified fee ranges and cross-checked income data for that specific career - and each one is adjustable, so you can swap in your own numbers instead of trusting an average that may not apply to you." }
     }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://careercost.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://careercost.com/guides/" },
+    { "@type": "ListItem", "position": 3, "name": "Cheapest Licenses to Get: 5 Careers Compared", "item": "https://careercost.com/guides/cheapest-licenses-compared/" }
   ]
 }
 </script>
@@ -135,6 +146,17 @@
   table.compare-table a{ color: var(--terracotta); font-weight: 600; text-decoration: none; }
   table.compare-table a:hover{ text-decoration: underline; }
 
+  .chart-box{
+    background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
+    padding: 22px 24px 12px; margin: 8px 0 26px;
+  }
+  .chart-box .chart-title{
+    font-family: var(--font-body); font-size: 12.5px; font-weight: 700; letter-spacing: 0.04em;
+    text-transform: uppercase; color: var(--ink-faint); margin: 0 0 14px;
+  }
+  .chart-box svg{ width: 100%; height: auto; display: block; }
+  .chart-box .chart-note{ font-size: 12.5px; color: var(--ink-faint); margin: 10px 0 0; }
+
   .notice{
     background: var(--terracotta-soft); border: 1.5px solid var(--terracotta); border-radius: 12px;
     padding: 16px 20px; font-size: 13.5px; line-height: 1.6; margin: 0 0 26px; color: var(--ink);
@@ -192,6 +214,36 @@
     </table>
     <p>Total cost is the more stable number to compare across careers, since it doesn't depend on your income assumptions - unlike payback period, which does.</p>
 
+    <div class="chart-box">
+      <p class="chart-title">Total cost, by career</p>
+      <svg viewBox="0 0 600 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bar chart comparing total cost to get certified or licensed across five careers: personal trainer $674, real estate $1,076, electrician $4,350, CDL $6,400, and cosmetology $16,575">
+        <text x="150" y="14" font-family="Work Sans, sans-serif" font-size="11" fill="#A69684">$0</text>
+        <text x="580" y="14" font-family="Work Sans, sans-serif" font-size="11" fill="#A69684" text-anchor="end">$17,000</text>
+        <line x1="150" y1="20" x2="580" y2="20" stroke="#E5D9CC" stroke-width="1"/>
+
+        <text x="0" y="42" font-family="Work Sans, sans-serif" font-size="13" fill="#2B211A">Personal Trainer</text>
+        <rect x="150" y="32" width="17" height="16" rx="3" fill="#7A8B6F"/>
+        <text x="175" y="44" font-family="Work Sans, sans-serif" font-size="12" fill="#6B5D4F">$674</text>
+
+        <text x="0" y="80" font-family="Work Sans, sans-serif" font-size="13" fill="#2B211A">Real Estate</text>
+        <rect x="150" y="70" width="27" height="16" rx="3" fill="#7A8B6F"/>
+        <text x="185" y="82" font-family="Work Sans, sans-serif" font-size="12" fill="#6B5D4F">$1,076</text>
+
+        <text x="0" y="118" font-family="Work Sans, sans-serif" font-size="13" fill="#2B211A">Electrician</text>
+        <rect x="150" y="108" width="110" height="16" rx="3" fill="#7A8B6F"/>
+        <text x="268" y="120" font-family="Work Sans, sans-serif" font-size="12" fill="#6B5D4F">$4,350</text>
+
+        <text x="0" y="156" font-family="Work Sans, sans-serif" font-size="13" fill="#2B211A">CDL</text>
+        <rect x="150" y="146" width="162" height="16" rx="3" fill="#7A8B6F"/>
+        <text x="320" y="158" font-family="Work Sans, sans-serif" font-size="12" fill="#6B5D4F">$6,400</text>
+
+        <text x="0" y="194" font-family="Work Sans, sans-serif" font-size="13" fill="#2B211A">Cosmetology</text>
+        <rect x="150" y="184" width="419" height="16" rx="3" fill="#2B211A"/>
+        <text x="160" y="196" font-family="Work Sans, sans-serif" font-size="12" fill="#fff">$16,575</text>
+      </svg>
+      <p class="chart-note">Figures are each calculator's default total cost. Open any calculator above to swap in your own quotes.</p>
+    </div>
+
     <h2>Payback time, fastest to slowest</h2>
     <table class="compare-table">
       <tr><th>Career</th><th>Payback Period</th><th>Default Assumption</th></tr>
@@ -208,7 +260,13 @@
 
     <h2>Why the gap between cosmetology and the rest is so large</h2>
     <p>Cosmetology's cost is dominated by tuition paid upfront before you earn anything. Electrician and CDL both have low-or-no-tuition paths (apprenticeship, or a short intensive program), so their total cost is mostly fees and tools, not tuition. Real estate and personal trainer are the cheapest because neither requires a multi-week training program at all - just a course, an exam, and in real estate's case, insurance.</p>
-    <p>None of this means cosmetology is a worse choice - it means the payback math looks different, and that's exactly why a single "average cost of a career change" number is close to useless for actually deciding between options.</p>
+    <p>None of this means cosmetology is a worse choice - it means the payback math looks different, and that's exactly why a single "average cost of a career change" number is close to useless for actually deciding between options. For a broader, government-sourced look at pay and job outlook across licensed trades, the U.S. Bureau of Labor Statistics' <a href="https://www.bls.gov/ooh/" target="_blank" rel="noopener">Occupational Outlook Handbook</a> is the standard reference many of the income figures behind these calculators are cross-checked against.</p>
+
+    <h2>How these numbers were calculated</h2>
+    <p>Every figure above comes from CareerCost's own calculators, not a single blogger's estimate. Each calculator's default inputs were built from primary sources - state licensing boards, certifying bodies, and, where relevant, government wage data - then cross-checked against at least one independent source before shipping. You can see exactly which fields go into each total by opening any calculator above and reading its "What's in the total cost" section, and every field is editable, so you're never stuck with our assumptions if you have better numbers for your own state or situation.</p>
+
+    <h2>Cost vs. speed: which matters more for you</h2>
+    <p>Total cost and payback period answer two different questions. If you're comparing career changes on a tight budget, total cost is what actually limits your options today - it's the number you need to have in hand before you can start. If you're comparing them as an investment, payback period tells you how fast the choice pays for itself, and a higher upfront cost isn't automatically the worse choice if it leads to meaningfully higher pay. Cosmetology's $16,575 total looks steep next to personal training's $674, but its roughly 8-month payback is still fast in absolute terms - the real question for most people is whether they can front the larger amount at all, not just which career looks "cheaper" on paper.</p>
 
     <div class="cta-box">
       <p>Get your own numbers instead of an average - every calculator on CareerCost is free and takes your real quotes, not a guess.</p>
