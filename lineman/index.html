@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lineman Training &amp; Apprenticeship Cost Calculator | CareerCost</title>
+<meta name="description" content="Free lineman cost calculator - see your real cost (pre-apprenticeship school, tools, union dues, and the wage gap during training) and how fast journeyman pay pays it back.">
+<link rel="canonical" href="https://careercost.com/lineman/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Lineman Training &amp; Apprenticeship Cost Calculator">
+<meta property="og:description" content="See your real cost to become a journeyman lineman and how fast full journeyman pay earns it back.">
+<meta property="og:url" content="https://careercost.com/lineman/">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Lineman Training & Apprenticeship Cost Calculator",
+  "url": "https://careercost.com/lineman/",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any (web-based)",
+  "description": "Free calculator that turns pre-apprenticeship lineman school tuition, tools, union dues, and the training-period wage gap into a total cost and a personalized payback timeline.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does it cost to become a lineman?",
+      "acceptedAnswer": { "@type": "Answer", "text": "It depends heavily on your path. If you attend a private pre-apprenticeship lineman school first, tuition runs $399 to about $18,000 (median around $8,400) for a 5-15 week program, plus $1,000+ for tools and boots. If you're hired directly into a utility or union apprenticeship without lineman school, that upfront cost is $0 - your main cost becomes union dues (typically $500-$700/year) and any wage gap during the 3-4 year apprenticeship." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you have to pay for lineman school before starting an apprenticeship?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Lineman school (also called a pre-apprenticeship program) is optional - it makes you a more competitive candidate for a limited number of apprenticeship openings, but many linemen are hired directly by a utility or IBEW local and trained entirely on the job, paying nothing upfront for school." }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does a lineman apprenticeship take and how much do apprentices get paid?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Most apprenticeships run 3 to 4 years. Apprentices typically start around 50-60% of journeyman wage and receive step raises as they accumulate hours, reaching full journeyman pay (median $95,320/year per the U.S. Bureau of Labor Statistics) at completion." }
+    }
+  ]
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K2E5SR15DB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-K2E5SR15DB');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #FAF6F1;
+    --surface: #FFFFFF;
+    --surface-soft: #F3EBE3;
+    --border: #E5D9CC;
+    --ink: #2B211A;
+    --ink-soft: #6B5D4F;
+    --ink-faint: #A69684;
+    --terracotta: #C1543C;
+    --terracotta-soft: rgba(193,84,60,0.10);
+    --sage: #7A8B6F;
+    --sage-soft: rgba(122,139,111,0.14);
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-body: 'Work Sans', system-ui, sans-serif;
+  }
+  *{ box-sizing: border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap{ max-width: 980px; margin: 0 auto; padding: 0 20px; }
+
+  header.site{ background: var(--ink); }
+  .site-nav{
+    max-width: 980px; margin: 0 auto; padding: 18px 20px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .brand{
+    font-family: var(--font-display); font-weight: 600; font-size: 20px; font-style: italic;
+    color: #fff; text-decoration: none;
+  }
+  .brand .accent{ color: #E8A491; font-style: normal; }
+  .site-nav a.link{
+    font-family: var(--font-body); font-size: 14px; font-weight: 600;
+    color: rgba(255,255,255,0.7); text-decoration: none; margin-left: 26px;
+  }
+  .site-nav a.link:hover{ color: #fff; }
+
+  main{ padding: 48px 0 80px; }
+
+  .eyebrow{
+    font-family: var(--font-body); font-size: 13px; font-weight: 700; letter-spacing: 0.05em;
+    color: var(--terracotta); text-transform: uppercase; margin: 0 0 12px;
+  }
+  h1{
+    font-family: var(--font-display); font-weight: 600; font-size: clamp(30px, 4.6vw, 44px);
+    line-height: 1.15; margin: 0 0 16px; letter-spacing: -0.01em; color: var(--ink);
+  }
+  .lede{ font-size: 16.5px; color: var(--ink-soft); line-height: 1.65; margin: 0 0 36px; max-width: 640px; }
+
+  .calc-layout{ display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 22px; align-items: start; }
+  @media (max-width: 800px){ .calc-layout{ grid-template-columns: 1fr; } }
+
+  .panel{
+    background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
+    padding: 28px;
+  }
+  .panel h2.panel-title{
+    font-family: var(--font-display); font-weight: 600; font-size: 19px; color: var(--ink);
+    margin: 0 0 20px;
+  }
+  .panel h2.panel-title.sub{ margin-top: 4px; }
+  .field-row{ display: grid; grid-template-columns: 1fr 130px; gap: 12px; align-items: center; margin-bottom: 15px; }
+  .field-row label{ font-family: var(--font-body); font-weight: 600; font-size: 14px; }
+  .field-row .hint{ display: block; font-weight: 400; font-size: 12px; color: var(--ink-faint); margin-top: 2px; }
+  .field-row input{
+    font-family: var(--font-body); font-size: 15px; color: var(--ink); text-align: right;
+    background: var(--surface-soft); border: 1px solid var(--border); border-radius: 9px;
+    padding: 10px 11px; width: 100%;
+  }
+  .field-row input:focus{ outline: none; border-color: var(--terracotta); }
+  .field-divider{ border: none; border-top: 1px solid var(--border); margin: 20px 0; }
+
+  .btn-primary{
+    font-family: var(--font-body); font-weight: 700; font-size: 15px;
+    color: #fff; background: var(--terracotta); border: none; border-radius: 10px;
+    padding: 14px 22px; cursor: pointer; width: 100%; margin-top: 8px;
+  }
+  .btn-primary:hover{ background: #A8452F; }
+
+  .calc-note{
+    font-size: 12.5px; color: #8A5A2B; background: rgba(193,84,60,0.08); border-radius: 8px;
+    padding: 9px 12px; margin: 12px 0 0; display: none;
+  }
+
+  .results-panel{
+    background: var(--ink); border-radius: 16px; padding: 28px; color: #fff;
+    position: sticky; top: 20px;
+  }
+  .results-panel .quote-label{
+    font-family: var(--font-body); font-size: 13px; font-weight: 600; letter-spacing: 0.03em;
+    color: rgba(255,255,255,0.6); text-transform: uppercase; margin: 0 0 8px;
+  }
+  .results-panel .quote-amount{
+    font-family: var(--font-display); font-weight: 600; font-size: 38px; margin: 0 0 4px; color: #E8A491;
+  }
+  .results-panel .quote-sub{ font-size: 13.5px; color: rgba(255,255,255,0.55); margin: 0 0 22px; }
+  .breakdown-row{
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.12); font-size: 14px;
+  }
+  .breakdown-row .b-label{ color: rgba(255,255,255,0.7); }
+  .breakdown-row .b-value{ font-family: var(--font-body); font-weight: 700; }
+  .breakdown-row.total{ border-bottom: none; margin-top: 4px; padding-top: 16px; font-size: 15px; }
+  .breakdown-row.total .b-value{ color: var(--sage); font-size: 17px; }
+
+  section.info{ margin-top: 68px; }
+  h2{
+    font-family: var(--font-display); font-weight: 600; font-size: 25px; color: var(--ink);
+    margin: 0 0 18px; letter-spacing: -0.005em;
+  }
+  section.info p{ font-size: 15.5px; line-height: 1.75; color: var(--ink-soft); margin: 0 0 16px; }
+
+  .term-grid{ display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin: 18px 0 8px; }
+  @media (max-width: 640px){ .term-grid{ grid-template-columns: 1fr; } }
+  .term-card{
+    background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px;
+  }
+  .term-card h3{
+    font-family: var(--font-display); font-size: 16px; font-weight: 600; margin: 0 0 6px; color: var(--terracotta);
+  }
+  .term-card p{ font-size: 13.5px; color: var(--ink-soft); margin: 0; line-height: 1.6; }
+
+  .faq-item{ border-bottom: 1px solid var(--border); padding: 20px 0; }
+  .faq-item h3{ font-family: var(--font-display); font-size: 17px; font-weight: 600; margin: 0 0 8px; color: var(--ink); }
+  .faq-item p{ font-size: 14.5px; color: var(--ink-soft); margin: 0; line-height: 1.7; }
+
+  footer{
+    border-top: 1px solid var(--border); margin-top: 70px; padding: 30px 0;
+    font-size: 12.5px; color: var(--ink-faint); text-align: center; line-height: 1.8;
+  }
+  footer a{ color: var(--terracotta); }
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="site-nav">
+    <a class="brand" href="/">Career<span class="accent">Cost</span></a>
+    <nav>
+      <a class="link" href="/">All Calculators</a>
+      <a class="link" href="/guides/">Guides</a>
+      <a class="link" href="#how-it-works">How it works</a>
+      <a class="link" href="#terms">Terms</a>
+      <a class="link" href="#faq">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <p class="eyebrow"><a href="/" style="color:inherit;text-decoration:none;">CareerCost</a> · Lineman</p>
+  <h1>Lineman Training &amp; Apprenticeship Cost Calculator</h1>
+  <p class="lede">Some linemen pay for a pre-apprenticeship school first; many are hired straight into a paid apprenticeship with no tuition at all. Enter your real path to see your total cost and how fast full journeyman pay earns it back.</p>
+
+  <div class="calc-layout">
+    <div class="panel">
+      <h2 class="panel-title">Pre-Apprenticeship School (Optional)</h2>
+
+      <div class="field-row">
+        <label for="f-school">Lineman school tuition<span class="hint">Optional - median $8,400, set to $0 if hired directly</span></label>
+        <input type="number" id="f-school" min="0" step="any" placeholder="0" value="8400">
+      </div>
+      <div class="field-row">
+        <label for="f-tools">Tools, boots &amp; gear<span class="hint">Typically $1,000+</span></label>
+        <input type="number" id="f-tools" min="0" step="any" placeholder="0" value="1000">
+      </div>
+
+      <hr class="field-divider">
+
+      <h2 class="panel-title sub">Your Apprenticeship</h2>
+
+      <div class="field-row">
+        <label for="f-journeyman">Journeyman wage in your area<span class="hint">$/hour - BLS median $45.83, varies by region</span></label>
+        <input type="number" id="f-journeyman" min="0" step="any" placeholder="0" value="45.83">
+      </div>
+      <div class="field-row">
+        <label for="f-years">Apprenticeship length<span class="hint">Typically 3-4 years</span></label>
+        <input type="number" id="f-years" min="1" step="1" placeholder="0" value="3">
+      </div>
+      <div class="field-row">
+        <label for="f-startpct">Starting apprentice wage<span class="hint">% of journeyman - typically 50-60%</span></label>
+        <input type="number" id="f-startpct" min="0" max="100" step="any" placeholder="0" value="55">
+      </div>
+      <div class="field-row">
+        <label for="f-dues">Union dues / apprenticeship fees<span class="hint">Per year - typically $500-$700</span></label>
+        <input type="number" id="f-dues" min="0" step="any" placeholder="0" value="600">
+      </div>
+
+      <hr class="field-divider">
+
+      <div class="field-row">
+        <label for="f-currentwage">Your current hourly wage<span class="hint">What you'd earn if you didn't apprentice</span></label>
+        <input type="number" id="f-currentwage" min="0" step="any" placeholder="0" value="0">
+      </div>
+
+      <p class="calc-note" id="calc-note"></p>
+      <button class="btn-primary" id="calc-btn" type="button">Recalculate</button>
+    </div>
+
+    <div class="results-panel">
+      <p class="quote-label">Total Cost to Become a Journeyman</p>
+      <p class="quote-amount" id="total-cost">$0</p>
+      <p class="quote-sub" id="avg-wage-sub">Average apprentice pay: —/hr</p>
+
+      <div class="breakdown-row"><span class="b-label">School &amp; tools</span><span class="b-value" id="b-school">$0</span></div>
+      <div class="breakdown-row"><span class="b-label">Union dues (all years)</span><span class="b-value" id="b-dues">$0</span></div>
+      <div class="breakdown-row"><span class="b-label">Wage gap during training</span><span class="b-value" id="b-gap">$0</span></div>
+      <div class="breakdown-row"><span class="b-label">Journeyman wage gain</span><span class="b-value" id="b-gain">$0/yr</span></div>
+      <div class="breakdown-row total"><span class="b-label">Payback Period</span><span class="b-value" id="b-payback">—</span></div>
+    </div>
+  </div>
+
+  <section class="info" id="how-it-works">
+    <h2>How this calculator works</h2>
+    <p>Becoming a lineman has two optional cost layers. First, a <b>pre-apprenticeship school</b> is a one-time upfront cost some candidates pay to become a more competitive applicant - it's genuinely optional, so set it to $0 if you're hired directly by a utility or union local. Second, once you're in a paid apprenticeship, the real cost is the <b>wage gap</b> between what you earn during training and what you'd make elsewhere (this calculator assumes a straight-line ramp from your starting % to 100%, a simplification of the real step-raise schedule but close enough for planning) - plus union dues along the way.</p>
+    <p>Once you're a full journeyman, the payback formula is the same one used everywhere on this site: <b>Payback Period = Total Cost ÷ Annual Wage Gain</b> (journeyman pay vs. your current wage, both annualized at 2,000 hours/year).</p>
+  </section>
+
+  <section class="info" id="terms">
+    <h2>What's in the numbers</h2>
+    <div class="term-grid">
+      <div class="term-card">
+        <h3>Pre-apprenticeship school (optional)</h3>
+        <p>Private lineman schools run $399-$18,000 (median ~$8,400) for a 5-15 week program - skip this entirely if you're hired directly into an apprenticeship.</p>
+      </div>
+      <div class="term-card">
+        <h3>Wage ramp</h3>
+        <p>Apprentices typically start at 50-60% of journeyman wage and get step raises as they accumulate hours, reaching 100% at completion - typically 3-4 years.</p>
+      </div>
+      <div class="term-card">
+        <h3>Union dues / apprenticeship fees</h3>
+        <p>IBEW local dues during an apprenticeship commonly run $500-$700/year - a real cost, but far less than trade-school tuition since you're earning while you learn.</p>
+      </div>
+      <div class="term-card">
+        <h3>Journeyman wage gain</h3>
+        <p>The permanent raise you get once licensed - median journeyman lineman pay is $95,320/year (BLS) - this is what actually pays back your training cost, year after year.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="info" id="faq">
+    <h2>FAQ</h2>
+    <div class="faq-item">
+      <h3>How much does it cost to become a lineman?</h3>
+      <p>It depends heavily on your path. If you attend a private pre-apprenticeship lineman school first, tuition runs $399 to about $18,000 (median around $8,400) for a 5-15 week program, plus $1,000+ for tools and boots. If you're hired directly into a utility or union apprenticeship without lineman school, that upfront cost is $0 - your main cost becomes union dues (typically $500-$700/year) and any wage gap during the 3-4 year apprenticeship.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Do you have to pay for lineman school before starting an apprenticeship?</h3>
+      <p>No. Lineman school (also called a pre-apprenticeship program) is optional - it makes you a more competitive candidate for a limited number of apprenticeship openings, but many linemen are hired directly by a utility or IBEW local and trained entirely on the job, paying nothing upfront for school.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How long does a lineman apprenticeship take and how much do apprentices get paid?</h3>
+      <p>Most apprenticeships run 3 to 4 years. Apprentices typically start around 50-60% of journeyman wage and receive step raises as they accumulate hours, reaching full journeyman pay (median $95,320/year per the U.S. Bureau of Labor Statistics) at completion.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  CareerCost is an independent tool and is not affiliated with any utility, union, apprenticeship program, or lineman school. Figures are general ranges - confirm exact costs and wage schedules with your local program before enrolling.
+</footer>
+
+<script>
+(function(){
+  const $ = (id) => document.getElementById(id);
+  const fmt = (n) => '$' + Math.round(n).toLocaleString('en-US');
+  const HOURS_PER_YEAR = 2000;
+
+  function num(id){
+    const v = parseFloat($(id).value);
+    return isNaN(v) || v < 0 ? 0 : v;
+  }
+
+  function calculate(){
+    const school = num('f-school');
+    const tools = num('f-tools');
+    const journeyman = num('f-journeyman');
+    const years = Math.max(1, num('f-years'));
+    let startPct = num('f-startpct');
+    const duesPerYear = num('f-dues');
+    const currentWage = num('f-currentwage');
+
+    const noteEl = $('calc-note');
+    if (startPct > 100){
+      startPct = 100;
+      noteEl.textContent = 'Starting wage % capped at 100%.';
+      noteEl.style.display = 'block';
+    } else {
+      noteEl.style.display = 'none';
+    }
+
+    const avgPct = (startPct + 100) / 2 / 100;
+    const avgApprenticeWage = journeyman * avgPct;
+
+    const apprenticeAnnualEarnings = avgApprenticeWage * HOURS_PER_YEAR;
+    const currentAnnualEarnings = currentWage * HOURS_PER_YEAR;
+    const annualShortfall = Math.max(0, currentAnnualEarnings - apprenticeAnnualEarnings);
+    const totalWageGap = annualShortfall * years;
+
+    const totalSchoolTools = school + tools;
+    const totalDues = duesPerYear * years;
+    const totalCost = totalWageGap + totalSchoolTools + totalDues;
+
+    const journeymanAnnual = journeyman * HOURS_PER_YEAR;
+    const annualGain = journeymanAnnual - currentAnnualEarnings;
+
+    $('total-cost').textContent = fmt(totalCost);
+    $('avg-wage-sub').textContent = 'Average apprentice pay: $' + avgApprenticeWage.toFixed(2) + '/hr (' + (avgPct*100).toFixed(0) + '% of journeyman)';
+    $('b-school').textContent = fmt(totalSchoolTools);
+    $('b-dues').textContent = fmt(totalDues);
+    $('b-gap').textContent = fmt(totalWageGap);
+    $('b-gain').textContent = fmt(annualGain) + '/yr';
+
+    const paybackEl = $('b-payback');
+    if (annualGain <= 0){
+      paybackEl.textContent = 'N/A';
+    } else if (totalCost <= 0){
+      paybackEl.textContent = 'Immediate';
+    } else {
+      const paybackYears = totalCost / annualGain;
+      const paybackMonths = paybackYears * 12;
+      if (paybackMonths < 24){
+        const m = Math.ceil(paybackMonths);
+        paybackEl.textContent = m + (m === 1 ? ' month' : ' months');
+      } else {
+        paybackEl.textContent = paybackYears.toFixed(1) + ' years';
+      }
+    }
+  }
+
+  const inputIds = ['f-school','f-tools','f-journeyman','f-years','f-startpct','f-dues','f-currentwage'];
+  inputIds.forEach(function(id){ $(id).addEventListener('input', calculate); });
+  $('calc-btn').addEventListener('click', calculate);
+
+  calculate();
+})();
+</script>
+</body>
+</html>
